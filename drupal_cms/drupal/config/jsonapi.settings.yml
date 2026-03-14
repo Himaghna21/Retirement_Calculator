@@ -1,0 +1,6 @@
+# JSON:API Configuration
+_core:
+  default_config_hash: V1996d_MHlV8sVs2LB5nMuAb_rqjvJj8fFvLx4yGMkw
+include_count: true
+one_to_one_compliance: true
+optimized_filtering: false

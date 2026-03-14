@@ -1,0 +1,67 @@
+<?php
+/**
+ * @file
+ * Retirement Calculator module hooks and functions.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_jsonapi_entity_filter_access().
+ *
+ * Allow public access to calculator content nodes.
+ */
+function retirement_calculator_jsonapi_entity_filter_access(EntityInterface $entity, AccountInterface $account) {
+  // Allow read access to calculator_content nodes
+  if ($entity->bundle() === 'calculator_content') {
+    return TRUE;
+  }
+  return NULL; // Let other modules decide
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Periodic maintenance tasks.
+ */
+function retirement_calculator_cron() {
+  // Cache invalidation (optional)
+  \Drupal::cache('default')->deleteAll();
+}
+
+/**
+ * Implements hook_jsonapi_entity_filter_alter().
+ *
+ * Custom filtering for calculator content.
+ */
+function retirement_calculator_jsonapi_entity_filter_alter(array &$filters, EntityInterface $entity) {
+  if ($entity->bundle() === 'calculator_content') {
+    // Add custom filters if needed
+  }
+}
+
+/**
+ * Get calculator content by title.
+ *
+ * @param string $title
+ *   The title of the content.
+ *
+ * @return \Drupal\node\NodeInterface|null
+ *   The node if found, NULL otherwise.
+ */
+function retirement_calculator_get_content_by_title($title) {
+  $query = \Drupal::entityQuery('node')
+    ->accessCheck(TRUE)
+    ->condition('type', 'calculator_content')
+    ->condition('title', $title)
+    ->condition('status', 1);
+  
+  $result = $query->execute();
+  
+  if (!empty($result)) {
+    $nid = reset($result);
+    return \Drupal\node\Entity\Node::load($nid);
+  }
+  
+  return NULL;
+}

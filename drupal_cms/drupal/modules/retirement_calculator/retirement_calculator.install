@@ -1,0 +1,111 @@
+<?php
+/**
+ * @file
+ * Install hooks for Retirement Calculator module.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Create content type and initial content.
+ */
+function retirement_calculator_install() {
+  // Create calculator_content node type if it doesn't exist
+  $node_type = \Drupal\node\Entity\NodeType::load('calculator_content');
+  
+  if (!$node_type) {
+    $node_type = \Drupal\node\Entity\NodeType::create([
+      'type' => 'calculator_content',
+      'name' => 'Calculator Content',
+      'description' => 'Content for retirement calculator (disclaimer, assumptions)',
+      'display_submitted' => FALSE,
+      'preview_mode' => DRUPAL_OPTIONAL,
+    ]);
+    $node_type->save();
+  }
+
+  // Create body field
+  $field_storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'body');
+  if (!$field_storage) {
+    $field_storage = \Drupal\field\Entity\FieldStorageConfig::create([
+      'field_name' => 'body',
+      'entity_type' => 'node',
+      'type' => 'text_with_summary',
+    ]);
+    $field_storage->save();
+
+    \Drupal\field\Entity\FieldConfig::create([
+      'field_storage' => $field_storage,
+      'bundle' => 'calculator_content',
+      'label' => 'Body',
+      'required' => TRUE,
+    ])->save();
+  }
+
+  // Create initial content nodes
+  $disclaimer = \Drupal\node\Entity\Node::create([
+    'type' => 'calculator_content',
+    'title' => 'Disclaimer',
+    'body' => [
+      'value' => retirement_calculator_get_default_disclaimer(),
+      'format' => 'full_html',
+    ],
+    'status' => 1,
+  ]);
+  $disclaimer->save();
+
+  $assumptions = \Drupal\node\Entity\Node::create([
+    'type' => 'calculator_content',
+    'title' => 'Assumptions',
+    'body' => [
+      'value' => retirement_calculator_get_default_assumptions(),
+      'format' => 'full_html',
+    ],
+    'status' => 1,
+  ]);
+  $assumptions->save();
+
+  \Drupal::messenger()->addMessage(t('Retirement Calculator module installed successfully.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function retirement_calculator_uninstall() {
+  // Clean up if needed
+}
+
+/**
+ * Get default disclaimer content.
+ */
+function retirement_calculator_get_default_disclaimer() {
+  return <<<HTML
+<h3>Disclaimer</h3>
+<p>This Retirement Planning Calculator is intended purely for <strong>illustrative purposes</strong> and should not be considered as investment advice or a recommendation to buy or sell any financial products.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+  <li>The calculations and results are based on assumptions that may or may not materialize in the future.</li>
+  <li>Actual results may vary significantly from the projections depending on market conditions, inflation rates, returns, and other economic factors.</li>
+  <li>HDFC does not guarantee the accuracy of these results or endorse any specific investment strategy.</li>
+  <li>Past performance is not indicative of future results.</li>
+  <li>Please consult with a qualified financial advisor before making any financial decisions.</li>
+</ul>
+HTML;
+}
+
+/**
+ * Get default assumptions content.
+ */
+function retirement_calculator_get_default_assumptions() {
+  return <<<HTML
+<h3>Assumptions - Illustrative Only</h3>
+<ul>
+  <li><strong>Life Expectancy:</strong> 85 years</li>
+  <li><strong>Inflation Rate:</strong> As per user input</li>
+  <li><strong>Pre-Retirement Return:</strong> As per user input</li>
+  <li><strong>Post-Retirement Return:</strong> As per user input</li>
+  <li><strong>Retirement Duration:</strong> 85 - Retirement Age (or as specified)</li>
+</ul>
+<p>These assumptions are for illustration purposes only and may not reflect actual market conditions.</p>
+HTML;
+}

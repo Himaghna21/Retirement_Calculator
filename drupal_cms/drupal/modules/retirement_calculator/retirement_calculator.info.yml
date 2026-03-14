@@ -1,0 +1,13 @@
+name: 'Retirement Calculator Module'
+description: 'Custom module for retirement calculator CMS integration'
+core_version_requirement: '^10'
+type: module
+package: 'HDFC Retirement Calculator'
+version: 1.0.0
+dependencies:
+  - drupal:jsonapi
+  - drupal:jsonapi_extras
+  - drupal:node
+  - drupal:field
+  - drupal:text
+  - drupal:link

@@ -1,0 +1,23 @@
+# CORS Configuration for Next.js Integration
+_core:
+  default_config_hash: keWQYlL2r1VnJEuTb37VnLYLfrdDDEwSr4M-dqvlN2I
+enabled: true
+allowedHeaders:
+  - '*'
+allowedMethods:
+  - GET
+  - POST
+  - PUT
+  - DELETE
+  - PATCH
+  - OPTIONS
+allowedOrigins:
+  - 'http://localhost:3000'
+  - 'https://localhost:3000'
+  - 'https://your-production-domain.com'
+  - 'https://your-staging-domain.com'
+exposedHeaders:
+  - 'Content-Length'
+  - 'X-JSON-RPC-Version'
+maxAge: 3600
+supportsCredentials: true

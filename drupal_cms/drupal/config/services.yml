@@ -1,0 +1,21 @@
+# Drupal Services Configuration
+parameters:
+  session.storage.options:
+    gc_maxlifetime: 2592000
+    gc_probability: 1
+    gc_divisor: 100
+
+services:
+  database:
+    class: Drupal\Core\Database\Driver\mysql\Connection
+    factory: ['Drupal\Core\Database\Database', 'getConnection']
+    arguments: ['default']
+
+  # Disable problematic modules in production
+  module_handler:
+    class: Drupal\Core\Extension\ModuleHandler
+
+  # Cache configuration
+  cache_factory:
+    class: Drupal\Core\Cache\CacheFactory
+    arguments: ['@settings']
