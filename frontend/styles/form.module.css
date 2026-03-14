@@ -1,0 +1,189 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.label {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.label.required::after {
+  content: ' *';
+  color: var(--color-error);
+}
+
+.input,
+.textarea,
+.select {
+  padding: 14px var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  border: 1px solid rgba(34, 76, 135, 0.2);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  background-color: var(--color-white);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+  width: 100%;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary-blue);
+  box-shadow: 0 0 0 4px rgba(34, 76, 135, 0.15), inset 0 2px 4px rgba(0,0,0,0.02);
+  transform: translateY(-1px);
+}
+  
+.input:hover:not(:focus):not(:disabled) {
+  border-color: rgba(34, 76, 135, 0.4);
+}
+
+.input:invalid:not(:placeholder-shown),
+.input.error {
+  border-color: var(--color-error);
+  background-color: rgba(218, 56, 50, 0.05);
+}
+
+.input:disabled,
+.textarea:disabled,
+.select:disabled {
+  background-color: var(--color-light-grey);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.helperText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-xs);
+  line-height: var(--line-height-relaxed);
+}
+
+.errorMessage {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  margin-top: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.errorMessage::before {
+  content: '⚠';
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputUnit {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: var(--color-primary-blue);
+  background: rgba(34, 76, 135, 0.08); /* Soft blue tag */
+  padding: 4px 10px;
+  border-radius: 12px;
+  pointer-events: none;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.5px;
+}
+
+.input.withUnit {
+  padding-right: 50px;
+}
+
+/* Placeholder styling */
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+/* Touch target minimum 44x44px for mobile */
+@media (max-width: 768px) {
+  .input,
+  .textarea,
+  .select {
+    min-height: 44px;
+  }
+
+  .label {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* --- BUTTONS --- */
+.button {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.button:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.button:disabled, .button.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Variants */
+.primary {
+  background-image: linear-gradient(135deg, #224c87 0%, #173766 50%, #2a5d9f 100%);
+  background-size: 200% auto;
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.primary:hover:not(:disabled) {
+  background-position: right center;
+  box-shadow: 0 10px 20px rgba(34, 76, 135, 0.25);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.secondary {
+  background: var(--glass-bg);
+  color: var(--color-primary-blue);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary-blue);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.secondary:hover:not(:disabled) {
+  background: rgba(34, 76, 135, 0.08);
+  box-shadow: 0 8px 16px rgba(34, 76, 135, 0.1);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Sizes */
+.md {
+  padding: 14px 28px;
+  min-width: 160px;
+}

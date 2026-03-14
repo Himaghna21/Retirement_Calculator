@@ -1,0 +1,90 @@
+:root {
+  /* Brand Colors */
+  --color-primary-blue: #224c87;
+  --color-primary-red: #da3832;
+  --color-neutral-grey: #919090;
+  --color-light-grey: #f5f5f5;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Text Colors */
+  --color-text-primary: #000000;
+  --color-text-secondary: #666666;
+  --color-text-light: #999999;
+
+  /* Semantic Colors */
+  --color-error: #da3832;
+  --color-success: #2d7a2d;
+  --color-warning: #f57c00;
+  --color-info: #224c87;
+
+  /* Borders */
+  --color-border: #e0e0e0;
+  --color-border-focus: #224c87;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Typography */
+  --font-family-primary: 'Montserrat', 'Arial', sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows (Premium soft depth) */
+  --shadow-sm: 0 2px 4px rgba(34, 76, 135, 0.04);
+  --shadow-md: 0 8px 16px rgba(34, 76, 135, 0.08);
+  --shadow-lg: 0 20px 40px rgba(34, 76, 135, 0.12);
+  --shadow-glass: 0 8px 32px 0 rgba(34, 76, 135, 0.08);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #224c87 0%, #173766 100%);
+  --gradient-hover: linear-gradient(135deg, #2a5d9f 0%, #224c87 100%);
+  --gradient-background: linear-gradient(120deg, #f4f7f6 0%, #ffffff 100%);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+
+  /* Z-index */
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-modal: 40;
+
+  /* Transition (Silky smooth) */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e0e0e0;
+    --color-text-light: #b0b0b0;
+    --color-light-grey: #2a2a2a;
+  }
+}

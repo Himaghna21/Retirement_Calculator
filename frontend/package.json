@@ -1,0 +1,33 @@
+{
+  "name": "retirement-planning-calculator",
+  "version": "1.0.0",
+  "description": "HDFC Retirement Planning Calculator - Illustrative Tool",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "a11y:audit": "lighthouse https://localhost:3000 --view"
+  },
+  "dependencies": {
+    "next": "15.5.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-config-next": "15.5.9",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.1"
+  }
+}

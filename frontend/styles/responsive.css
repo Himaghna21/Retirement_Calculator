@@ -1,0 +1,67 @@
+/* Mobile-first approach */
+
+/* Tablet breakpoint (768px) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+
+  /* 2-column layout on tablet */
+  .form-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .form-two-column > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop breakpoint (1024px) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .form-two-column {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Large desktop (1280px) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Extra large desktop (1536px) */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Landscape orientation on small devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    overflow-y: scroll;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
