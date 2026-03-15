@@ -27,8 +27,8 @@ A professional, brand-compliant retirement planning tool built with the modern w
 
 ```text
 retirement_calculator/
-├── frontend/          # Next.js 15 application (UI & Logic)
-├── backend/           # Node.js API services & Database logic
+├── frontend/          # Unified Next.js application (UI & Integrated API)
+├── backend/           # Standalone Node.js API (Legacy/Alternative)
 └── drupal_cms/        # Drupal integration & content management
 ```
 
