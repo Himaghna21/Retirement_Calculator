@@ -9,7 +9,7 @@ A professional, brand-compliant retirement planning tool built with the modern w
 ## 🎥 Video Demo
 
 <!-- DRAG AND DROP YOUR VIDEO FILE HERE IN THE GITHUB UI -->
-[Upload a video to see it here!]
+[(https://github.com/user-attachments/assets/209edd4c-f185-4e65-a806-8dc5e5f10c9c)]
 
 ## 🚀 Key Features
 
