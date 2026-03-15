@@ -46,6 +46,35 @@ export const InputField = ({
     .filter(Boolean)
     .join(' ');
 
+  const handleKeyDown = (e) => {
+    if (type !== 'number') return;
+    
+    const numericStep = parseFloat(step) || 1;
+    const currentVal = parseFloat(value) || 0;
+    
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const nextVal = currentVal + numericStep;
+      const formattedVal = numericStep % 1 !== 0 
+        ? parseFloat(nextVal.toFixed(2)) 
+        : nextVal;
+        
+      if (max && formattedVal > parseFloat(max)) return;
+      
+      onChange({ target: { name, value: formattedVal.toString(), id } });
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const nextVal = currentVal - numericStep;
+      const formattedVal = numericStep % 1 !== 0 
+        ? parseFloat(nextVal.toFixed(2)) 
+        : nextVal;
+        
+      if (min && formattedVal < parseFloat(min)) return;
+      
+      onChange({ target: { name, value: formattedVal.toString(), id } });
+    }
+  };
+
   return (
     <div className={styles.formGroup}>
       <label htmlFor={id} className={`${styles.label} ${required ? styles.required : ''}`}>
@@ -63,11 +92,14 @@ export const InputField = ({
         <input
           id={id}
           name={name}
-          type={type}
+          type="text"
+          inputMode={type === 'number' ? (step && step.toString().includes('.') ? 'decimal' : 'numeric') : undefined}
+          pattern={type === 'number' ? "[0-9]*\\.?[0-9]*" : undefined}
           className={inputClasses}
           placeholder={placeholder}
-          value={value}
+          value={value ?? ''}
           onChange={onChange}
+          onKeyDown={handleKeyDown}
           onBlur={(e) => {
             setIsFocused(false);
             if (onBlur) onBlur(e);

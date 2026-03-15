@@ -16,7 +16,10 @@
     "next": "15.5.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "axios": "^1.7.7"
+    "axios": "^1.7.7",
+    "mysql2": "^3.9.7",
+    "uuid": "^9.0.1",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",

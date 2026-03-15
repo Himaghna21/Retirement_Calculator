@@ -46,10 +46,7 @@ export const CalculatorForm = ({ calculatorControls, onCalculationComplete }) =>
 
   return (
     <div onKeyDown={handleKeyDown} className={calcStyles.formSection}>
-      <h2>Retirement Planning Calculator</h2>
-      <p style={{ fontSize: '14px', color: '#666', margin: '0 0 16px 0' }}>
-        All fields are required. Values are illustrative only.
-      </p>
+      {/* Header removed for single-title layout */}
 
       {error && (
         <div
