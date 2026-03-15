@@ -6,6 +6,11 @@ A professional, brand-compliant retirement planning tool built with the modern w
 
 **[View Live Application](https://hdfc-retirement-calculator.vercel.app)**
 
+## 🎥 Video Demo
+
+<!-- DRAG AND DROP YOUR VIDEO FILE HERE IN THE GITHUB UI -->
+[Upload a video to see it here!]
+
 ## 🚀 Key Features
 
 - **Scientific Calculation**: Uses the Present Value of Annuity formula for accurate retirement corpus estimation.
