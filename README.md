@@ -2,6 +2,10 @@
 
 A professional, brand-compliant retirement planning tool built with the modern web stack. This calculator enables users to estimate their required retirement corpus and monthly SIP contributions based on scientific financial formulas and HDFC's strict brand guidelines.
 
+## 🔗 Live Demo
+
+**[View Live Application](https://hdfc-retirement-calculator.vercel.app)**
+
 ## 🚀 Key Features
 
 - **Scientific Calculation**: Uses the Present Value of Annuity formula for accurate retirement corpus estimation.
