@@ -10,12 +10,12 @@
   /* Text Colors */
   --color-text-primary: #000000;
   --color-text-secondary: #666666;
-  --color-text-light: #999999;
+  --color-text-light: #919090;
 
-  /* Semantic Colors */
+  /* Semantic Colors - Restricted to Brand Palette */
   --color-error: #da3832;
-  --color-success: #2d7a2d;
-  --color-warning: #f57c00;
+  --color-success: #224c87; /* Replaced green with brand blue */
+  --color-warning: #919090; /* Replaced orange with brand grey */
   --color-info: #224c87;
 
   /* Borders */
@@ -30,8 +30,8 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
 
-  /* Typography */
-  --font-family-primary: 'Montserrat', 'Arial', sans-serif;
+  /* Typography - Only Montserrat, Arial, Verdana */
+  --font-family-primary: 'Montserrat', 'Arial', 'Verdana', sans-serif;
   --font-size-base: 16px;
   --font-size-sm: 14px;
   --font-size-lg: 18px;

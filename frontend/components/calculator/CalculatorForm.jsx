@@ -10,7 +10,7 @@ import calcStyles from '@/styles/calculator.module.css';
 /**
  * Main calculator form component
  */
-export const CalculatorForm = ({ onCalculationComplete }) => {
+export const CalculatorForm = ({ calculatorControls, onCalculationComplete }) => {
   const {
     formData,
     updateField,
@@ -19,18 +19,33 @@ export const CalculatorForm = ({ onCalculationComplete }) => {
     loading,
     error,
     formErrors,
-  } = useCalculator();
+  } = calculatorControls;
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    await submitCalculation();
-    if (onCalculationComplete) {
-      onCalculationComplete();
+    console.log('--- HANDLE SUBMIT INITIATED ---');
+    console.log('calculatorControls exists?', !!calculatorControls);
+    if (e) e.preventDefault();
+    try {
+      console.log('Calling submitCalculation...');
+      await submitCalculation();
+      console.log('submitCalculation completed');
+      if (onCalculationComplete) {
+        console.log('Calling onCalculationComplete...');
+        onCalculationComplete();
+      }
+    } catch (err) {
+      console.error('ERROR in handleSubmit:', err);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit(e);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className={calcStyles.formSection} noValidate>
+    <div onKeyDown={handleKeyDown} className={calcStyles.formSection}>
       <h2>Retirement Planning Calculator</h2>
       <p style={{ fontSize: '14px', color: '#666', margin: '0 0 16px 0' }}>
         All fields are required. Values are illustrative only.
@@ -163,7 +178,8 @@ export const CalculatorForm = ({ onCalculationComplete }) => {
 
       <div className={calcStyles.formActions}>
         <Button
-          type="submit"
+          type="button"
+          onClick={handleSubmit}
           disabled={loading}
           variant="primary"
           aria-busy={loading}
@@ -183,6 +199,6 @@ export const CalculatorForm = ({ onCalculationComplete }) => {
       {/* Live region for screen readers */}
       <div id="live-region" aria-live="polite" aria-atomic="true" className="sr-only" />
       <div id="live-region-error" aria-live="assertive" aria-atomic="true" className="sr-only" />
-    </form>
+    </div>
   );
 };

@@ -148,6 +148,10 @@ The calculator is sensitive to these factors:
 - Inflation Calculation: Compound interest formula
 - SIP Calculation: Annuity Due (payments at beginning of month)
 
+## Important Disclaimer
+
+This tool has been designed for information purposes only. Actual results may vary depending on various factors involved in capital market. Investor should not consider above as a recommendation for any schemes of HDFC Mutual Fund. Past performance may or may not be sustained in future and is not a guarantee of any future returns.
+
 ## Questions?
 
 For clarification on any assumption, please contact the Financial Planning team.

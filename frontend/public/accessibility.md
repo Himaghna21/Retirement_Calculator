@@ -123,3 +123,6 @@ For more information on web accessibility:
 - [WebAIM](https://webaim.org/)
 - [W3C Web Accessibility Initiative](https://www.w3.org/WAI/)
 - [Access.org](https://www.access.org.uk/)
+## Legal Disclaimer
+
+This tool has been designed for information purposes only. Actual results may vary depending on various factors involved in capital market. Investor should not consider above as a recommendation for any schemes of HDFC Mutual Fund. Past performance may or may not be sustained in future and is not a guarantee of any future returns.

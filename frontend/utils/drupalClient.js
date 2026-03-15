@@ -206,17 +206,7 @@ export const getCacheStats = () => {
  */
 export const getDefaultDisclaimer = () => {
   return `
-    <h3>Disclaimer</h3>
-    <p>This Retirement Planning Calculator is intended purely for <strong>illustrative purposes</strong> and should not be considered as investment advice or a recommendation to buy or sell any financial products.</p>
-    
-    <p><strong>Key Points:</strong></p>
-    <ul>
-      <li>The calculations and results are based on assumptions that may or may not materialize in the future.</li>
-      <li>Actual results may vary significantly from the projections depending on market conditions, inflation rates, returns, and other economic factors.</li>
-      <li>HDFC does not guarantee the accuracy of these results or endorse any specific investment strategy.</li>
-      <li>Past performance is not indicative of future results.</li>
-      <li>Please consult with a qualified financial advisor before making any financial decisions.</li>
-    </ul>
+    <p>This tool has been designed for information purposes only. Actual results may vary depending on various factors involved in capital market. Investor should not consider above as a recommendation for any schemes of HDFC Mutual Fund. Past performance may or may not be sustained in future and is not a guarantee of any future returns.</p>
   `;
 };
 

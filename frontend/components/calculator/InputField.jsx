@@ -80,7 +80,7 @@ export const InputField = ({
           step={step}
           aria-label={ariaLabel || label}
           aria-describedby={describedByIds || undefined}
-          aria-invalid={error ? 'true' : 'false'}
+          aria-invalid={!!error}
           aria-required={required}
         />
         {unit && <div className={styles.inputUnit}>{unit}</div>}

@@ -8,6 +8,9 @@ export const formatCurrency = (value, decimalPlaces = 2) => {
   if (value === null || value === undefined || isNaN(value)) {
     return '₹0';
   }
+  if (value === 0) {
+    return '₹0';
+  }
 
   const absValue = Math.abs(value);
   let formattedValue;

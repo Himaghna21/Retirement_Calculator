@@ -44,7 +44,7 @@ Calculate retirement planning requirements.
       "retirementDuration": "25 years",
       "lifeExpectancyAssumption": "85 years"
     },
-    "disclaimer": "This is an illustrative calculation. Actual results may vary based on market conditions and other factors.",
+    "disclaimer": "This tool has been designed for information purposes only. Actual results may vary depending on various factors involved in capital market. Investor should not consider above as a recommendation for any schemes of HDFC Mutual Fund. Past performance may or may not be sustained in future and is not a guarantee of any future returns.",
     "calculatedAt": "2026-03-12T10:30:00Z"
   }
 }
@@ -678,4 +678,4 @@ For API issues or questions:
 
 ## Disclaimer
 
-This API provides illustrative calculations for retirement planning purposes only. The results are not investment advice and should not be considered as recommendations. Always consult with a qualified financial advisor before making financial decisions.
+This tool has been designed for information purposes only. Actual results may vary depending on various factors involved in capital market. Investor should not consider above as a recommendation for any schemes of HDFC Mutual Fund. Past performance may or may not be sustained in future and is not a guarantee of any future returns.

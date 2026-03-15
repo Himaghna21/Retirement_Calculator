@@ -1,6 +1,7 @@
-import { Metadata } from 'next';
+import '@/styles/variables.css';
+import '@/app/globals.css';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'HDFC Retirement Planning Calculator',
   description: 'Calculate your retirement corpus and required monthly SIP for illustration purposes only.',
   keywords: ['retirement', 'planning', 'calculator', 'SIP', 'corpus', 'HDFC'],
@@ -67,33 +68,12 @@ export default function RootLayout({ children }) {
       <head>
         {/* Preconnect to external services */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
         
-        {/* Preload fonts */}
-        <link
-          rel="preload"
-          as="font"
-          href="/fonts/Montserrat-Regular.woff2"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="font"
-          href="/fonts/Montserrat-Bold.woff2"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://your-domain.com" />
-        
-        {/* Security headers (alternative method) */}
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta httpEquiv="Content-Security-Policy" 
-          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'" />
+        {/* Preload local fonts if they exist, but Google Fonts is primary now for Montserrat */}
       </head>
       <body>{children}</body>
     </html>
   );
-}
+}

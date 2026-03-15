@@ -47,7 +47,7 @@ Create 2 nodes:
 
 **Disclaimer**
 - **Title:** "Disclaimer"
-- **Body:** (copy from `docs/assumptions.md`)
+- **Body:** This tool has been designed for information purposes only. Actual results may vary depending on various factors involved in capital market. Investor should not consider above as a recommendation for any schemes of HDFC Mutual Fund. Past performance may or may not be sustained in future and is not a guarantee of any future returns.
 - **Status:** Published
 
 **Assumptions**
@@ -127,11 +127,11 @@ docs/
 - [ ] Cache headers configured
 
 ### 3. Brand Compliance Verification
-- [ ] Check colors: Only #224c87, #da3832, #919090
-- [ ] Check fonts: Only Montserrat, Arial, Verdana
-- [ ] Check imagery: No financial icons
-- [ ] Check language: No promotional phrases
-- [ ] Check disclaimer: Visible, 14px+, 4.5:1 contrast
+- [x] Check colors: Only #224c87, #da3832, #919090
+- [x] Check fonts: Only Montserrat, Arial, Verdana
+- [x] Check imagery: No growth arrows, currency icons, or charts
+- [x] Check language: No promotional phrases or exaggerated metaphors
+- [x] Check disclaimer: Exact mandatory wording, 14px+, 4.5:1 contrast
 
 ### 4. Accessibility Audit
 - [ ] Lighthouse score: 95+

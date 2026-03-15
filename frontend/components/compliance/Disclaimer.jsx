@@ -11,7 +11,7 @@ import { fetchDisclaimer } from '@/utils/drupalClient';
  * - Minimum 14px font size for WCAG AA
  * - Can be toggled on mobile
  */
-export const Disclaimer = ({ 
+export const Disclaimer = ({
   className = '',
   collapsible = false,
   initiallyExpanded = true,
@@ -59,9 +59,9 @@ export const Disclaimer = ({
           marginBottom: '32px',
         }}
       >
-        <p style={{ 
-          margin: 0, 
-          color: '#333', 
+        <p style={{
+          margin: 0,
+          color: '#333',
           fontSize: '14px',
           fontStyle: 'italic',
         }}>
@@ -168,8 +168,8 @@ export const Disclaimer = ({
           )}
 
           {error && (
-            <p style={{ 
-              color: '#da3832', 
+            <p style={{
+              color: '#da3832',
               fontSize: '12px',
               fontWeight: '600',
               margin: '8px 0 0 0',

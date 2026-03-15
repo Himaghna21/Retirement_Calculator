@@ -2,10 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   compress: true,
-  devIndicators: {
-    appIsrStatus: false,
-    buildActivity: false,
-  },
+  devIndicators: false,
   headers: async () => {
     return [
       {
@@ -25,6 +22,14 @@ const nextConfig = {
           },
         ],
       },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:3001/api/:path*'
+      }
     ];
   },
 };

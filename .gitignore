@@ -111,7 +111,17 @@ Thumbs.db
 # Project specific
 .swc/
 jest-results.json
+jest-output.txt
 test-results*.txt
 test-out*.txt
 final-results.txt
 test_errors*.log
+results*.json
+*.log
+*-output.txt
+*-results.txt
+.env.local
+.env.development*
+.env.test*
+.env.production*
+.env*.local

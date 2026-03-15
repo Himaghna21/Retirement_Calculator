@@ -73,13 +73,6 @@ export const ResultsPanel = ({ results, loading, visible }) => {
         </div>
       </div>
 
-      <div className={resultsStyles.disclaimerSection}>
-        <p>
-          <strong>Important:</strong> These calculations are illustrative and based on the assumptions you provided. 
-          Actual results may vary significantly based on market conditions, inflation changes, and actual returns. 
-          Please consult with a financial advisor before making investment decisions.
-        </p>
-      </div>
     </section>
   );
 };

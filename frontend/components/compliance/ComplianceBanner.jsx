@@ -87,8 +87,8 @@ export const ComplianceBanner = ({
               ℹ️
             </span>
             <span>
-              This calculator provides <strong>illustrative estimates only</strong>. 
-              Actual retirement planning requirements may vary.
+              This calculator provides <strong>information purposes only</strong>. 
+              Figures are illustrative and subject to change.
             </span>
           </p>
         </div>

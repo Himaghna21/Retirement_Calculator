@@ -39,17 +39,32 @@ export const Footer = () => {
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ marginBottom: '8px' }}>
-                <a href="#" style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}>
+                <a 
+                  href="https://www.hdfcmf.com/knowledge-center/financial-planning" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}
+                >
                   Financial Planning Guide
                 </a>
               </li>
               <li style={{ marginBottom: '8px' }}>
-                <a href="#" style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}>
+                <a 
+                  href="https://www.hdfcmf.com/knowledge-center/faq" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}
+                >
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#" style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}>
+                <a 
+                  href="https://www.hdfcmf.com/contact-us" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}
+                >
                   Contact Us
                 </a>
               </li>
@@ -63,17 +78,31 @@ export const Footer = () => {
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ marginBottom: '8px' }}>
-                <a href="#" style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}>
+                <a 
+                  href="https://www.hdfcmf.com/privacy-policy" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}
+                >
                   Privacy Policy
                 </a>
               </li>
               <li style={{ marginBottom: '8px' }}>
-                <a href="#" style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}>
+                <a 
+                  href="https://www.hdfcmf.com/terms-and-conditions" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}
+                >
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}>
+                <a 
+                  href="/accessibility.md" 
+                  target="_blank" 
+                  style={{ fontSize: '14px', color: '#224c87', textDecoration: 'none' }}
+                >
                   Accessibility Statement
                 </a>
               </li>

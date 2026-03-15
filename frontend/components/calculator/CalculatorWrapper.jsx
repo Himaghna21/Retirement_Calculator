@@ -13,7 +13,9 @@ import calcStyles from '@/styles/calculator.module.css';
  * Fetches assumptions from Drupal CMS
  */
 export const CalculatorWrapper = () => {
-  const { results, loading } = useCalculator();
+  const calculatorControls = useCalculator();
+  const { results, loading } = calculatorControls;
+  
   const [showResults, setShowResults] = useState(false);
   const [assumptions, setAssumptions] = useState(null);
   const [assumptionsLoading, setAssumptionsLoading] = useState(true);
@@ -50,25 +52,32 @@ export const CalculatorWrapper = () => {
   return (
     <div className={calcStyles.calculatorContainer}>
       <div className={calcStyles.calculatorHeader}>
-        <h1>Retirement Planning Calculator</h1>
-        <p>Calculate your retirement corpus and required monthly SIP</p>
-        <p style={{ fontSize: '12px', color: '#999', marginTop: '12px' }}>
-          This tool provides illustrative calculations only. All figures are for illustration purposes.
+        <h1 className="sr-only">Retirement Planning</h1>
+        <h2 style={{ fontSize: '24px', fontWeight: 'bold', margin: '0 0 12px 0', color: '#224c87' }}>
+          Retirement Planning Calculator
+        </h2>
+        <p style={{ fontSize: '16px', color: '#000000', margin: '0 0 16px 0' }}>
+          Calculate your retirement corpus and required monthly SIP
         </p>
+        <div style={{ 
+          height: '2px', 
+          background: '#919090', 
+          width: '60px', 
+          margin: '0 auto 24px auto',
+          opacity: '0.3'
+        }} />
       </div>
 
       {/* Calculator Form */}
-      <CalculatorForm onCalculationComplete={handleCalculationComplete} />
+      <CalculatorForm 
+        calculatorControls={calculatorControls}
+        onCalculationComplete={handleCalculationComplete} 
+      />
 
       {/* Results Section */}
       {results && (
         <>
           <ResultsPanel results={results} loading={loading} visible={showResults} />
-          
-          {/* Assumptions from Drupal CMS */}
-          {!assumptionsLoading && assumptions && (
-            <AssumptionsPanel assumptions={assumptions} />
-          )}
         </>
       )}
     </div>

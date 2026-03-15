@@ -8,15 +8,7 @@ import { NextResponse } from 'next/server';
 export async function GET(request) {
   try {
     const disclaimer = `
-      <h3>Disclaimer</h3>
-      <p>This Retirement Planning Calculator is intended purely for illustrative purposes and should not be considered as investment advice or a recommendation.</p>
-      <p><strong>Key Points:</strong></p>
-      <ul>
-        <li>Calculations are based on assumptions that may not materialize.</li>
-        <li>Actual results may vary significantly from projections.</li>
-        <li>HDFC does not guarantee accuracy or endorse any investment strategy.</li>
-        <li>Please consult with a qualified financial advisor.</li>
-      </ul>
+      <p>This tool has been designed for information purposes only. Actual results may vary depending on various factors involved in capital market. Investor should not consider above as a recommendation for any schemes of HDFC Mutual Fund. Past performance may or may not be sustained in future and is not a guarantee of any future returns.</p>
     `;
 
     const assumptions = {

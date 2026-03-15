@@ -63,13 +63,16 @@ export const useCalculator = () => {
     setFormErrors({});
 
     try {
+      console.log('Validating form data:', formData);
       // Client-side validation first
       const validationErrors = validateFormData(formData);
       if (Object.keys(validationErrors).length > 0) {
+        console.warn('Validation failed:', validationErrors);
         setFormErrors(validationErrors);
         return;
       }
 
+      console.log('Validation passed. Starting submission...');
       setLoading(true);
 
       // Convert form data to API format
@@ -84,7 +87,10 @@ export const useCalculator = () => {
 
       const response = await axios.post(`${API_BASE_URL}/api/calculate`, apiPayload);
 
-      if (response.data) {
+      if (response.data && response.data.success) {
+        setResults(response.data.data);
+      } else if (response.data) {
+        // Fallback for unexpected format
         setResults(response.data);
       }
     } catch (err) {

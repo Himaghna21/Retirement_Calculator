@@ -39,11 +39,11 @@ describe('formatCurrency', () => {
 
   describe('decimal places', () => {
     test('formats with 2 decimal places by default', () => {
-      expect(formatCurrency(1234567.89)).toMatch(/1\.23/);
+      expect(formatCurrency(1234567.89)).toMatch(/12\.35/);
     });
 
     test('formats with custom decimal places', () => {
-      expect(formatCurrency(1234567, 1)).toMatch(/1\./);
+      expect(formatCurrency(1234567, 1)).toMatch(/12\.3/);
     });
   });
 });
